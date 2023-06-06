@@ -1,11 +1,12 @@
 <template>
   <section>
-    <ProductView />
+    <ProductMarket />
   </section>
 </template>
 
 <script setup>
-  import ProductView from '../components/ProductView.vue';
+  import ProductMarket from '../components/ProductMarket.vue';
+
 </script>
 
 
