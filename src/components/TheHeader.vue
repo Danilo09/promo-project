@@ -29,6 +29,8 @@
 header {
     padding: 1rem;
     background: #000000;
+    z-index: 99999;
+    position: relative;
 }
 
 nav {
@@ -39,8 +41,8 @@ nav {
   box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
 }
 
-.navigation-header a:first-child {
-    padding-right: 1rem;
+.navigation-header a {
+    padding-left: 1rem;
 }
 
 .navigation-header a {
