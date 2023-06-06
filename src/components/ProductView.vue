@@ -1,28 +1,8 @@
 <template>
     <section class="home-products-promotion">
-        <h2>
-            Produtos em Destaque
-        </h2>
-        <div class="card">
-            <div class="card-content">
-                <img src="@/assets/headphone-1.png" alt="headphone">
-            </div>
-            <div class="card-infos">
-                <h3 class="card-title">Wireless Headphones</h3>
-                <h2 class="price">$40.<small>99</small></h2>
-                <a href="#" class="buy">Comprar</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-content">
-                <img src="@/assets/headphone-1.png" alt="headphone">
-            </div>
-            <div class="card-infos">
-                <h3 class="card-title">Wireless Headphones</h3>
-                <h2 class="price">$40.<small>99</small></h2>
-                <a href="#" class="buy">Comprar</a>
-            </div>
-        </div>
+        <!-- <h2>
+            Produtos em Destaque: Eletronicos
+        </h2> -->
         <div class="card">
             <div class="card-content">
                 <img src="@/assets/headphone-1.png" alt="headphone">
@@ -66,6 +46,7 @@ export default {
     overflow: hidden;
     display: inline-block;
     margin: 1rem;
+    z-index: 99999;
 }
 
 .card:before {
