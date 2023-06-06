@@ -13,5 +13,7 @@ import { RouterView } from "vue-router";
 </template>
 
 <style scoped>
-
+main {
+  height: 100vh;
+}
 </style>
