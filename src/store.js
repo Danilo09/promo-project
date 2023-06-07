@@ -1,9 +1,9 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import { api } from "@/services.js";
-Vue.use(Vuex);
 
-export default new Vuex.Store({
+import { createStore } from 'vuex'
+import { api } from "@/services.js";
+
+
+export const store = createStore ({
   strict: true,
   state: {
     login: false,
@@ -23,35 +23,15 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getUser(context) {
-      return api.get(`/user`).then(response => {
+    getUser(context, payload) {
+      return api.get(`/user/${payload}`).then(response => {
         context.commit("UPDATE_USER", response.data);
         context.commit("UPDATE_LOGIN", true);
       });
     },
     userCreate(context, payload) {
-      context.commit("UPDATE_USER", { id: payload.email });
-      return api.post("/user", payload);
-    },
-    userLogin(context, payload) {
-      return api
-        .login({
-          username: payload.email,
-          password: payload.password
-        })
-        .then(response => {
-          window.localStorage.token = `Bearer ${response.data.token}`;
-        });
-    },
-    logoutUser(context) {
-      context.commit("UPDATE_USER", {
-        id: "",
-        nome: "",
-        email: "",
-        senha: "",
-      });
-      window.localStorage.removeItem("token");
-      context.commit("UPDATE_LOGIN", false);
+      context.commit("UPDATE_USER", {id: payload.email})
+      return api.post("/user", payload)
     }
   }
 });
