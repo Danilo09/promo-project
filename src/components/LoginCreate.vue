@@ -1,24 +1,25 @@
 <template>
     <section>
       <h2>Crie a Sua Conta</h2>
-      <NotificationError :erros="erros"/>
-      <transition mode="out-in">
+      <!-- <NotificationError :erros="erros"/> -->
         <button v-if="!create" class="btn" @click="create = true">Criar Conta</button>
         <Userform v-else>
-          <button class="btn btn-form" @click.prevent="UserCreate">Criar Usuário</button>
-        </Userform>
-      </transition>
+          <button class="btn btn-form" @click.prevent="userCreate">Criar Usuário</button>
+        </UserForm>
     </section>
   </template>
   
 <script>
+
+// import NotificationError from './NotificationError.vue';
+
 import Userform from './Userform.vue';
 
 export default {
     name: "login-view",
-    components: { 
-        Userform 
-    },
+    components: {
+    Userform
+},
     data() {
         return {
             create: false,
@@ -26,22 +27,15 @@ export default {
         }
     },
     methods: {
-        async UserCreate(event) {
-            this.erros = []
-            const button = event.currentTarget;
-            button.value = "Criando...";
-            button.setAttribute("disabled", "");
-            try {
-                await this.$store.dispatch("UserCreate", this.$store.state.user)
-                await this.$store.dispatch("UserLogin", this.$store.state.user)
-                await this.$store.dispatch("getUser")
-                this.$router.push({ name: "user"})
-            } catch (error) {
-                button.removeAttribute("disabled");
-                button.value = "Criar Usuário";
-                this.erros.push(error.response.data.message)
-            }
+      async userCreate() {
+        try {
+          await this.$store.dispatch("userCreate", this.$store.state.user);
+          await this.$store.dispatch("getUser", this.$store.state.user.email);
+          this.$router.push({name: "user-page"})
+        } catch(error){
+          console.log(error)
         }
+      }
     }
 };
 </script>
