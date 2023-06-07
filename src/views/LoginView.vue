@@ -1,20 +1,17 @@
-
-
-
 <template>
     <section class="login">
       <h1>Login</h1>
       <form>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" v-model="login.email">
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" v-model="login.senha">
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" v-model="login.password">
         <button class="btn" @click.prevent="logar">Logar</button>
-        <ErroNotificacao :erros="erros"/>
+        <NotificationError :erros="erros"/>
       </form>
       <p class="lost">
         <a
-          href="http://ranekapilocal.local/wp-login.php?action=lostpassword"
+          href="#"
           target="_blank"
         >Perdeu a senha? Clique aqui.</a>
       </p>
@@ -24,35 +21,30 @@
 
 <script>
 import LoginCreate from '../components/LoginCreate.vue';
+import NotificationError from '../components/NotificationError.vue';
 
 export default {
     name: "Login-view",
     components: {
-        LoginCreate
+      LoginCreate,
+      NotificationError
     },
     data() {
         return {
             login: {
                 email: "",
-                senha: ""
+                password: ""
             },
             erros: []
         };
     },
     methods: {
         logar() {
-            this.erros = [];
-            this.$store.dispatch("loginUser", this.login)
-            .then(response => {
-                this.$store.dispatch("getUser");
-                this.$router.push({ name: "user"})
-            })
-            .catch(error => {
-                this.erros.push(error.response.data.message)
-            })
+            this.$store.dispatch("getUser", this.login.email)
+            this.$router.push({name: "user-page"});
         }
     },
-    create(){
+    mounted(){
         document.title = "Login"
     }
 }
