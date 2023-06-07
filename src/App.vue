@@ -1,7 +1,18 @@
-<script setup>
+<script>
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import { RouterView } from "vue-router";
+import { RouterView } from 'vue-router';
+
+
+export default {
+  components: {
+    TheHeader,
+    TheFooter,
+    RouterView
+  }
+
+};
+
 </script>
 
 <template>
@@ -13,7 +24,5 @@ import { RouterView } from "vue-router";
 </template>
 
 <style scoped>
-main {
-  height: 100vh;
-}
+
 </style>
