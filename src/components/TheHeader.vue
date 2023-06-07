@@ -1,13 +1,14 @@
 <template>
     <header>
       <nav>
-        <router-link to="/" class="logo">
+        <RouterLink to="/" class="logo">
           <img src="@/assets/promo-logo.png" alt="Promo Project Logo">
-        </router-link>
+        </RouterLink>
         <div class="navigation-header">
             <RouterLink to="/">Início</RouterLink>
             <RouterLink to="/product">Produto</RouterLink>
-            <RouterLink to="/login">Entrar</RouterLink>
+            <RouterLink v-if="$store.state.login" to="/user">{{ name }}</RouterLink>
+            <RouterLink v-else to="/login">Entrar</RouterLink>
         </div>
       </nav>
     </header>
@@ -16,11 +17,11 @@
   <script>
   export default {
     name: "TheHeader",
-    // computed: {
-    //   nome() {
-    //     return this.$store.state.usuario.nome.replace(/ .*/, "");
-    //   }
-    // }
+    computed: {
+      name() {
+        return this.$store.state.user.name.replace(/ .*/, "");
+      }
+    }
   };
   </script>
 
