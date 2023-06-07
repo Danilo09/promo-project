@@ -32,6 +32,16 @@ export const store = createStore ({
     userCreate(context, payload) {
       context.commit("UPDATE_USER", {id: payload.email})
       return api.post("/user", payload)
+    },
+    userLogin(context, payload) {
+      return api
+      .login({
+        username: payload.email,
+        password: payload.password
+      })
+      .then(response => {
+        console.log(response)
+      })
     }
   }
 });

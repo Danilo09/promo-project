@@ -1,20 +1,35 @@
 <template>
-    <section class="user">
-        user
+    <section class="user-graphic">
+      <UserGraphic />
+    </section>
+    <section>
+      <RandomStatus />
     </section>
   </template>
 
 <script>
+
+import UserGraphic from './UserGraphic.vue'
+import RandomStatus from './RandomStatus.vue'
+
 export default {
   name: "user-page",
-  methods: {
-    deslogar() {
-      this.$store.dispatch("deslogarUsuario");
-      this.$router.push("/login");
-    }
+  components: {
+    UserGraphic,
+    RandomStatus
   },
-  created() {
+  mounted() {
     document.title = "Usuário";
   }
 };
 </script>
+
+
+<style>
+.user-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+</style>

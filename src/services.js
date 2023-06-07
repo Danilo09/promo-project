@@ -10,6 +10,9 @@ export const api = {
   },
   post(endpoint, body) {
     return axiosInstance.post(endpoint, body);
+  },
+  login(body){
+    return axios.post(`http://localhost:3000/user`, body)
   }
 };
 
