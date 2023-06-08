@@ -4,6 +4,9 @@
     <div class="bg-angle-left"></div>
     <div class="bg-angle-right"></div>
     <ProductView />
+    <div>
+      <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde esse earum ipsa quaerat quisquam obcaecati aspernatur qui, omnis iste, beatae dicta vel. Tempora repellendus earum modi ex dolores atque quam?</p>
+    </div>
  </section>
     
 </template>
@@ -22,13 +25,13 @@ import ProductView from './ProductView.vue';
 
 @keyframes breath-dark {
   0% {
-    height: 20vh;
+    height: 30vh;
   }
   50% {
     height: 10vh;
   }
   100% {
-    height: 20vh;
+    height: 30vh;
   }
 }
 @keyframes breath-yellow {
@@ -36,7 +39,7 @@ import ProductView from './ProductView.vue';
     clip-path: polygon(100% 0, 0% 100%, 100% 100%);
   }
   50% {
-    clip-path: polygon(100% 27%, 0% 100%, 100% 100%); 
+    clip-path: polygon(100% 30%, 0% 100%, 100% 100%); 
   }
   100% {
    clip-path: polygon(100% 0, 0% 100%, 100% 100%); 
@@ -58,18 +61,24 @@ import ProductView from './ProductView.vue';
   left:0;
   right:0;
   width: 100%;
-  height: 20vh; 
+  height: 30vh; 
 }
 .bg-angle-left {
   z-index: -1;
-  background: #000;
+  background: #4022af;
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
   animation: breath-dark 10s infinite;
 }
 .bg-angle-right {
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);;
-  background: #cd4b2a;
+  background: #87f;
   animation: breath-yellow 13s infinite;
+}
+
+.description {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0px 20px;
 }
 </style>
 

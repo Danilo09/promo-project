@@ -1,16 +1,16 @@
 <template>
     <section class="home-products-promotion">
-        <!-- <h2>
-            Produtos em Destaque: Eletronicos
-        </h2> -->
+        <h2>
+            Produto em Destaque
+        </h2>
         <div class="card">
             <div class="card-content">
-                <img src="@/assets/headphone-1.png" alt="headphone">
+                <img src="@/assets/desinfetante.png" alt="headphone">
             </div>
             <div class="card-infos">
-                <h3 class="card-title">Wireless Headphones</h3>
+                <h3 class="card-title">Loren Ipsum Lorem</h3>
                 <h2 class="price">$40.<small>99</small></h2>
-                <a href="#" class="buy">Comprar</a>
+                <a href="/login" class="buy">Comprar</a>
             </div>
         </div>
     </section>
@@ -31,17 +31,20 @@ export default {
 .home-products-promotion {
     text-align: center;
 }
-.home-products-promotion h2 {
+h2 {
     text-align: center;
     margin: 20px 10px;
     text-transform: uppercase;
+    font-size: 2rem;
+    margin-top: 40px;
+    color: #87f;
 }
 
 .card {
     position: relative;
     width: 320px;
     height: 420px;
-    background: #191919;
+    background: transparent;
     border-radius: 20px;
     overflow: hidden;
     display: inline-block;
@@ -55,9 +58,9 @@ export default {
     top: -120%;
     width: 100%;
     height: 100%;
-    background: #cd4b2a;
+    background: #87f;
     transform: skewY(345deg) !important;
-    transition: 0.5s;
+    transition: 1s;
     left: 0;
 }
 
@@ -67,7 +70,7 @@ export default {
 }
 
 .card:after {
-    content:'CORSAIR';
+    content:'';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -89,7 +92,15 @@ export default {
 
 .card .card-content img {
     max-width: 100%;
-    transition: 0.5s;
+    transition: 0.5s ease-in;
+}
+
+.card:hover {
+    background-color: #4324b1;
+}
+
+.card:hover .card-infos .card-title {
+    color: #FFFFFF;
 }
 
 .card:hover .card-content img {
@@ -117,7 +128,7 @@ export default {
 
 .card .card-infos h3 {
     font-size: 18px;
-    color: #FFF;
+    color: transparent;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -135,7 +146,7 @@ export default {
     margin-top: 15px;
     color: #FFF;
     text-decoration: none;
-    background: #cd4b2a;
+    background: #87f;
     border-radius: 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
