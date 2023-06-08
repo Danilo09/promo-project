@@ -1,7 +1,7 @@
 <template>
     <section>
       <h2>Crie a Sua Conta</h2>
-      <!-- <NotificationError :erros="erros"/> -->
+      <NotificationError :erros="erros"/>
         <button v-if="!create" class="btn" @click="create = true">Criar Conta</button>
         <Userform v-else>
           <button class="btn btn-form" @click.prevent="userCreate">Criar Usuário</button>
@@ -11,14 +11,15 @@
   
 <script>
 
-// import NotificationError from './NotificationError.vue';
+import NotificationError from './NotificationError.vue';
 
 import Userform from './Userform.vue';
 
 export default {
     name: "login-view",
     components: {
-    Userform
+    Userform,
+    NotificationError
 },
     data() {
         return {
@@ -30,7 +31,8 @@ export default {
       async userCreate() {
         try {
           await this.$store.dispatch("userCreate", this.$store.state.user);
-          await this.$store.dispatch("getUser", this.$store.state.user.email);
+          await this.$store.dispatch("userLogin", this.$store.state.user);
+          await this.$store.dispatch("getUser");
           this.$router.push({name: "user-page"})
         } catch(error){
           console.log(error)
