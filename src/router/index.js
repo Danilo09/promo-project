@@ -22,10 +22,40 @@ const router = createRouter({
     {
       path: '/user',
       name: 'user-page',
-      component: () => import('../views/user/User.vue')
+      component: () => import('../views/user/User.vue'),
+      meta: {
+        login: true
+      },
+      children: [
+        {
+          path: "",
+          name: "user-graphic",
+          component: () => import('../views/user/UserGraphic.vue')
+        },
+        {
+          path: "",
+          name: "random-status",
+          component: () => import('../views/user/RandomStatus.vue')
+        }
+      ]
     },
     
-  ]
+  ],
+  scrollBehavior() {
+    return window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.login)) {
+    if (!window.localStorage.token) {
+      next("/login");
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+});
 
 export default router
