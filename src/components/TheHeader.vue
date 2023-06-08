@@ -2,7 +2,7 @@
     <header>
       <nav>
         <RouterLink to="/" class="logo">
-          <img src="@/assets/promo-logo.png" alt="Promo Project Logo">
+          <img src="@/assets/logo.svg" alt="Promo Project Logo">
         </RouterLink>
         <div class="navigation-header">
             <RouterLink to="/">Início</RouterLink>
