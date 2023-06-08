@@ -38,6 +38,7 @@ h2 {
     font-size: 2rem;
     margin-top: 40px;
     color: #87f;
+    font-weight: bold;
 }
 
 .card {

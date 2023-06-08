@@ -1,5 +1,5 @@
 <template>
-    <transition>
+    <transition mode="out-in" appear>
       <ul class="error" v-if="erros.length > 0">
         <li v-for="(erro, index) in erros" :key="index" v-html="erro"></li>
       </ul>

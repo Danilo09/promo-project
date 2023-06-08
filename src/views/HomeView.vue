@@ -1,6 +1,8 @@
 <template>
   <section>
-    <ProductMarket />
+    <transition mode="out-in" appear>
+      <ProductMarket />
+    </transition>
   </section>
 </template>
 

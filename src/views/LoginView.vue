@@ -40,8 +40,10 @@ export default {
     },
     methods: {
         logar() {
+            this.erros = [];
+            this.$store.dispatch("userLogin", this.login)
             // eslint-disable-next-line no-unused-vars
-            this.$store.dispatch("userLogin", this.login).then(response => {
+            .then(response => {
               this.$store.dispatch("getUser")
               this.$router.push({name: "user-page"});
             }).catch(error => {

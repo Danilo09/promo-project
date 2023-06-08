@@ -29,13 +29,14 @@ export default {
     },
     methods: {
       async userCreate() {
+        this.erros = [];
         try {
           await this.$store.dispatch("userCreate", this.$store.state.user);
           await this.$store.dispatch("userLogin", this.$store.state.user);
           await this.$store.dispatch("getUser");
           this.$router.push({name: "user-page"})
         } catch(error){
-          console.log(error)
+          this.erros.push(error.response.data.message)
         }
       }
     }
