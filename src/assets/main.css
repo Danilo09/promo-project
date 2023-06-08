@@ -8,6 +8,11 @@
 main {
   min-height: 100vh;
 }
+body {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  color: #345;
+  background: url("./pattern.svg") repeat top;
+}
 input,
 textarea {
   border-radius: 4px;
