@@ -40,8 +40,13 @@ export default {
     },
     methods: {
         logar() {
-            this.$store.dispatch("getUser", this.login.email)
-            this.$router.push({name: "user-page"});
+            // eslint-disable-next-line no-unused-vars
+            this.$store.dispatch("userLogin", this.login).then(response => {
+              this.$store.dispatch("getUser")
+              this.$router.push({name: "user-page"});
+            }).catch(error => {
+              this.erros.push(error.response.data.message);
+            })
         }
     },
     mounted(){

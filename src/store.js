@@ -23,8 +23,8 @@ export const store = createStore ({
     }
   },
   actions: {
-    getUser(context, payload) {
-      return api.get(`/user/${payload}`).then(response => {
+    getUser(context) {
+      return api.get(`/user`).then(response => {
         context.commit("UPDATE_USER", response.data);
         context.commit("UPDATE_LOGIN", true);
       });
@@ -40,8 +40,19 @@ export const store = createStore ({
         password: payload.password
       })
       .then(response => {
+        window.localStorage.token = `Bearer ${response.data.token}`
         console.log(response)
       })
+    },
+    userLogout(context) {
+      context.commit("UPDATE_USER", {
+        id: "",
+        name: "",
+        email: "",
+        password: ""
+      });
+      window.localStorage.removeItem("token");
+      context.commit("UPDATE_LOGIN", false);
     }
   }
 });
