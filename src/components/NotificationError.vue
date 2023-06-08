@@ -16,12 +16,18 @@ export default {
 </script>
 
 <style scoped>
-.erro {
+.error {
   margin: 20px auto;
 }
 
-.erro li {
+.error li {
   color: #e80;
   text-align: center;
+  text-decoration: none;
 }
+
+ul.error li a {
+    display: block;
+}
+
 </style>
