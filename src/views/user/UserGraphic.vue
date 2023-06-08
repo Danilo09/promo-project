@@ -1,5 +1,5 @@
 <template>
-    <section class="graphic">
+    <section key="skladj" class="graphic">
       <div>
         <h2>Gráfico das cidades</h2>
         <canvas id="myChart"></canvas>
@@ -57,8 +57,5 @@ export default {
 </script>
 
 <style scoped >
-    .graphic {
-        min-width: 600px;
-    }
 
 </style>
