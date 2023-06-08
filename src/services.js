@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000"
+  baseURL: "http://localhost/projeto_novi/wp-json/api"
 });
 
 export const api = {
@@ -12,7 +12,9 @@ export const api = {
     return axiosInstance.post(endpoint, body);
   },
   login(body){
-    return axios.post(`http://localhost:3000/user`, body)
+    return axios.post(`http://localhost/projeto_novi/wp-json/jwt-auth/v1/token`, body)
+  },
+  validateToken(){
+    return axios.post(`http://localhost/projeto_novi/wp-json/jwt-auth/v1/token/validate`)
   }
 };
-
