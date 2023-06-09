@@ -65,13 +65,13 @@ import ProductView from './ProductView.vue';
 }
 .bg-angle-left {
   z-index: -1;
-  background: #4022af;
+  background: #4022af29;
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
   animation: breath-dark 10s infinite;
 }
 .bg-angle-right {
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);;
-  background: #87f;
+  background: #4022af29;
   animation: breath-yellow 13s infinite;
 }
 

@@ -29,7 +29,7 @@
 
 header {
     padding: 1rem;
-    background: #000000;
+    background: #FFFFFF;
     z-index: 99999;
     position: relative;
 }
@@ -46,8 +46,14 @@ nav {
     padding-left: 1rem;
 }
 
+@media screen and (max-width: 400px) {
+  .navigation-header a {
+    font-size: 12px;
+  }
+}
+
 .navigation-header a {
-    color: #FFFFFF;
+    color: #000000;
     text-decoration: none;
     text-transform: uppercase;
 }

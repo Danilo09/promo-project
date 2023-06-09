@@ -49,7 +49,6 @@ h2 {
     border-radius: 20px;
     overflow: hidden;
     display: inline-block;
-    margin: 1rem;
     z-index: 99999;
 }
 

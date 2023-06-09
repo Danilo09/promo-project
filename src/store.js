@@ -41,7 +41,6 @@ export const store = createStore ({
       })
       .then(response => {
         window.localStorage.token = `Bearer ${response.data.token}`
-        console.log(response)
       })
     },
     userLogout(context) {
