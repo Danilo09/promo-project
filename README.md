@@ -21,6 +21,8 @@ The API was built in PHP and wordpress, so its necessary install the wordpress p
 
 First, download wordpress: https://br.wordpress.org/download/
 
+After, follow these steps:
+
 - Download Wamp or Xamp or Mamp to be able to run the api locally.
 
 - Put the wordpress downloaded into the htdocs.
