@@ -78,7 +78,7 @@ import ProductView from './ProductView.vue';
 .description {
   text-align: center;
   font-size: 1rem;
-  padding: 0px 20px;
+  padding: 20px;
 }
 </style>
 

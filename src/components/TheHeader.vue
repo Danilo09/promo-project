@@ -7,8 +7,8 @@
         <div class="navigation-header">
             <RouterLink to="/">Início</RouterLink>
             <RouterLink to="/product">Produto</RouterLink>
-            <RouterLink v-if="$store.state.login" to="/user">{{ name }}</RouterLink>
-            <RouterLink v-else to="/login">Entrar</RouterLink>
+            <RouterLink v-if="$store.state.login" to="/user" class="btn-login">{{ name }}</RouterLink>
+            <RouterLink v-else to="/login" class="btn-login">Entrar</RouterLink>
         </div>
       </nav>
     </header>
@@ -41,7 +41,16 @@ nav {
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
 }
-
+.btn-login {
+  background-color: #87f;
+  padding: 10px 10px !important;
+  margin-left: 1rem;
+  color: #FFFFFF !important;
+  border-radius: 3px;
+}
+.btn-login:hover {
+  background-color: rgb(104, 90, 197);
+}
 .navigation-header a {
     padding-left: 1rem;
 }
@@ -65,4 +74,6 @@ nav {
 .logo img {
   width: 90px;
 }
+
+
 </style>

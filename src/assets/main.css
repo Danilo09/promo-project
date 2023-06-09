@@ -32,6 +32,10 @@ textarea {
   width: 100%;
 }
 
+h2 {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
 input:hover,
 input:focus,
 textarea:hover,
