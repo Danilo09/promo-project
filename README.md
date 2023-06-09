@@ -2,7 +2,7 @@
 
 ### Resume:
 
-This project was built in order to delivery a short application containing a product on homepage, routers to other pages, a form with your rules to login and sign up, a graphic with 3 citys and a button that brings images from comuns errors status.
+This project was built with the intention of delivering a small application containing a product on the homepage, routers to other pages, a form with its rules for login and registration, a graphic with 3 cities and a button that brings status images of common errors .
 
 ## Getting Started
 
